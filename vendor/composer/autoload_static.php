@@ -9,14 +9,14 @@ class ComposerStaticInitfa7d9dc1967088196dacaa92f3343035
     public static $prefixLengthsPsr4 = array (
         'A' => 
         array (
-            'AppWcs\\' => 7,
+            'App\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'AppWcs\\' => 
+        'App\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/Wcs',
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
@@ -30,12 +30,18 @@ class ComposerStaticInitfa7d9dc1967088196dacaa92f3343035
         ),
     );
 
+    public static $classMap = array (
+        'App\\AppWcs\\Hello' => __DIR__ . '/../..' . '/src/Wcs/Hello.php',
+        'HelloWorld\\SayHello' => __DIR__ . '/..' . '/ehime/hello-world/src/HelloWorld/SayHello.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitfa7d9dc1967088196dacaa92f3343035::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitfa7d9dc1967088196dacaa92f3343035::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitfa7d9dc1967088196dacaa92f3343035::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitfa7d9dc1967088196dacaa92f3343035::$classMap;
 
         }, null, ClassLoader::class);
     }

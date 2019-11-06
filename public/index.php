@@ -1,7 +1,7 @@
 <?php
 require "../vendor/autoload.php";
 
-use AppWcs\Hello;
+use App\AppWcs\Hello;
 use HelloWorld\SayHello;
 
 $hello = new Hello();
